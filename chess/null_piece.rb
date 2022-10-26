@@ -6,11 +6,6 @@ include Singleton
 
     attr_accessor :color, :symbol
 
-    def initialize
-        @color = color
-        @symbol = symbol
-    end
-
     def moves
     end
 

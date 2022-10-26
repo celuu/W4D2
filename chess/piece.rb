@@ -27,10 +27,10 @@ class Piece
         self[pos] = value
     end
 
-    private
+    # private
 
-    def move_into_check?(end_pos)
+    # def move_into_check?(end_pos)
         
-    end
+    # end
 
 end

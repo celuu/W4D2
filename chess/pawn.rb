@@ -2,8 +2,13 @@ require "piece"
 
 class Pawn < Piece
 
-    def initialize
+    def initialize(color, board, pos)
+        super
         @symbol = symbol
+    end
+
+    def move
+        forward_steps.concat(side_attacks)
     end
 
     private
@@ -17,16 +22,26 @@ class Pawn < Piece
     end
 
     def forward_dir
-        #trying to figure out what dir
-        #depends on color
-        #black one dir, white - 1
-        
+        self.color == white ? 1 : -1
     end
 
     def forward_steps
+        potential_moves = []
+        if !side_attacks && !at_start_row
+           x,y = self.pos
+           potential_moves << self[x, y+1]
+        end
+        potential_moves
     end
 
     def side_attacks
+        potential_moves = []
+        x,y = self.pos
+        if self[x+1, y+1] && self.color != self.color
+            potential_moves << self[x+1, y+1]
+        elsif self[x-1, y+1] && self.color != self.color
+            potential_moves << self[x-1, y+1]
+        end
+        potential_moves
     end
-
 end
