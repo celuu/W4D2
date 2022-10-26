@@ -1,7 +1,10 @@
 require_relative "board.rb"
+
 class Piece
     def initialize(piece)
         @piece = piece
+        @board = Board.new
+        @pos = []
     end
 end
 

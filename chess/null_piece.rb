@@ -11,4 +11,7 @@ include Singleton
         @symbol = symbol
     end
 
+    def moves
+    end
+
 end

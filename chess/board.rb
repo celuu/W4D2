@@ -1,9 +1,6 @@
-require_relative "piece.rb"
-
 
 
 class Board
-include Slideable
     attr_accessor :rows
     def initialize
         @rows = Array.new(8){Array.new(8)}
@@ -23,6 +20,26 @@ include Slideable
         @rows[7][3] = Piece.new('queen')
         @rows[0][4] = Piece.new('king')
         @rows[7][4] = Piece.new('king')
+
+        @rows[1][0] = Piece.new('pawn')
+        @rows[1][1] = Piece.new('pawn')
+        @rows[1][2] = Piece.new('pawn')
+        @rows[1][3] = Piece.new('pawn')
+        @rows[1][4] = Piece.new('pawn')
+        @rows[1][5] = Piece.new('pawn')
+        @rows[1][6] = Piece.new('pawn')
+        @rows[1][7] = Piece.new('pawn')
+
+        @rows[6][0] = Piece.new('pawn')
+        @rows[6][1] = Piece.new('pawn')
+        @rows[6][2] = Piece.new('pawn')
+        @rows[6][3] = Piece.new('pawn')
+        @rows[6][4] = Piece.new('pawn')
+        @rows[6][5] = Piece.new('pawn')
+        @rows[6][6] = Piece.new('pawn')
+        @rows[6][7] = Piece.new('pawn')
+
+
     end
 
     def [](pos)
