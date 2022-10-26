@@ -4,6 +4,7 @@ require_relative "piece.rb"
 
 class Board
 include Slideable
+    attr_accessor :rows
     def initialize
         @rows = Array.new(8){Array.new(8)}
         @rows[0][0] = Piece.new('rook')
@@ -48,7 +49,7 @@ include Slideable
         if !self[end_pos].nil?
             raise "piece cannot move to end position"
         end
-        
+
         self[start_pos],self[end_pos] = self[end_pos],self[start_pos]
     end
 
