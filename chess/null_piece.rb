@@ -1,12 +1,17 @@
 require 'Singleton'
 
-class NullPiece 
+class NullPiece < Piece
 include Singleton  
 
-    attr_reader :color, :symbol 
+    attr_accessor :color, :symbol 
+
     def initialize
         @color = color
         @symbol = symbol
     end
+
+
+
+
 
 end

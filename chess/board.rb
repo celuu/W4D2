@@ -1,5 +1,9 @@
 require_relative "piece.rb"
+
+
+
 class Board
+include Slideable
     def initialize
         @rows = Array.new(8){Array.new(8)}
         @rows[0][0] = Piece.new('rook')
@@ -28,6 +32,13 @@ class Board
     def []=(pos, value)
         row, col = pos
         @rows[row][col] = value
+    end
+
+    def valid_pos?(pos)
+        row, col = pos
+        pos.all? do |i|
+            i > 0 && i < @rows.length
+        end
     end
 
     def move_piece(start_pos, end_pos)

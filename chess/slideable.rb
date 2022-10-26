@@ -18,7 +18,7 @@ module Slideable
 
     def moves
         moves = []
-        self.move_dirs.each do |x, y|
+        move_dirs.each do |x, y|
             moves.concat(grow_unblocked_moves_in_dir(x, y))
         end
         moves
@@ -28,11 +28,22 @@ module Slideable
         # return moves
     end
 
+    private
+
     def grow_unblocked_moves_in_dir(dx,dy)
         output = []
-        while self[pos].nil?
-            output << [dx, dy]
+        new_pos = [pos[0] + dx, pos[1] + dy]
+
+        while rows.valid_pos?(new_pos) && !rows[new_pos].color
+            output << new_pos
+            
+
         end
+        #while loop to check if new_pos is in bound
+        #not occupied and not occupied by enemy
+        #shovel new_pos into result arr
+        #recalculate the new position
+        #increment dx, dy by one
         output
     end
 
