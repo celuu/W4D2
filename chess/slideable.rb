@@ -18,7 +18,7 @@ module Slideable
 
     def moves
         moves = []
-        self.move_dirs.each do |x, y|
+        self.move_dirs.each do |(x, y)|
             moves.concat(grow_unblocked_moves_in_dir(x, y))
         end
         moves
@@ -40,6 +40,9 @@ module Slideable
 
         while rows.valid_pos?(new_pos) && !rows[new_pos].color
             output << new_pos
+            #change new pos
+            #if its valid then keep making new pos
+            #anytime it meets an enemy or not valid, break out pf the loop
         end
         output
     end

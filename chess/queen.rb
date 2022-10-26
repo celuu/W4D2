@@ -16,6 +16,12 @@ require_relative "piece.rb"
 require_relative "slideable.rb"
 class Rook_Bishop_Queen < Piece
     include Slideable
+    def symbol
+        'queen'.color
+    end
+
+    private
+
     def move_dirs
         HORIZONTAL_VERTICLE_DIRS
         DIAGONAL_DIRS

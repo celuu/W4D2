@@ -17,8 +17,16 @@ class Pawn < Piece
     end
 
     def forward_dir
+        #trying to figure out what dir
+        #depends on color
+        #black one dir, white - 1
         
     end
 
+    def forward_steps
+    end
+
+    def side_attacks
+    end
 
 end
